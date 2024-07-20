@@ -2903,6 +2903,7 @@ http://blog.portswigger.net/2015/08/server-side-template-injection.html
     fill 'url(http://example.com/)'
     pop graphic-context
     ```
+- Thử với `/<ip>:<port>` ở url
 
 - HTTPoxy
     - CGI 自動將 header `Proxy` 代入成環境變數 `HTTP_Proxy`
