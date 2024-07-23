@@ -4284,6 +4284,7 @@ state[i] = state[i-3] + state[i-31]`
     ```
     - 因為 `/files` 沒有加上結尾 `/`，而 `/home/` 有
     - 所以 `/files../` 可以訪問上層目錄
+    - Cố gắng thử bằng cách `curl --path-as-is 'http://localhost:80/flag.txt/.'` nếu nginx được cấu hình chặn truy cập vào `/flag.txt`
 
 - Nginx add_header 
     - 預設當 repsponse 是 200, 201, 204, 206, 301, 302, 303, 304, 307, or 308 時，`add_header` 才會設定 header
