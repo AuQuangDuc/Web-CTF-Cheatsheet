@@ -330,6 +330,10 @@ ${Runtime.getRuntime().exec("touch /tmp/pwned")}
 
 
 
+# PHP (BE) + Python(FE)
+
+- Thực hiện chèn thêm 1 tham số nữa. Python sẽ nhận tham số đầu còn PHP sẽ nhận tham số sau.
+
 # PHP Weak Type
 
 - `var_dump('0xABCdef'       == '     0xABCdef');`
