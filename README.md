@@ -8,6 +8,7 @@ Table of Contents
 *  [Reverse Shell](#reverse-shell)
 *  [PHP Tag](#php-tag)
 *  [PHP Weak Type](#php-weak-type)
+*  [PHP + Python](#PHP-(BE)-+-Python(FE))
 *  [PHP Feature](#php-其他特性)
     * [Bypass open\_basedir](#open_basedir繞過)
     * [Bypass disable\_functions](#disable_functions繞過)
